@@ -1,6 +1,7 @@
 import { Search, Zap, User } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { GlassCard } from "./GlassCard";
 import type { ProspectData } from "@/lib/mockData";
 
 interface TopBarProps {
@@ -22,11 +23,7 @@ export const TopBar = ({ onGenerate, isLoading }: TopBarProps) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="glass-card p-4 mb-6"
-    >
+    <GlassCard glowClass="widget-glow-input" className="mb-6">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-primary/20 flex items-center justify-center">
@@ -84,6 +81,6 @@ export const TopBar = ({ onGenerate, isLoading }: TopBarProps) => {
           </motion.button>
         </div>
       </form>
-    </motion.div>
+    </GlassCard>
   );
 };

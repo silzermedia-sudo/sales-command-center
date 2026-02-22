@@ -6,65 +6,67 @@
 
 @layer base {
   :root {
-    --background: 225 25% 6%;
-    --foreground: 210 40% 95%;
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
 
-    --card: 225 20% 10%;
-    --card-foreground: 210 40% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
 
-    --popover: 225 20% 10%;
-    --popover-foreground: 210 40% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 217 91% 60%;
+    --primary: 217 91% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 210 30% 80%;
+    --secondary: 220 15% 94%;
+    --secondary-foreground: 220 15% 35%;
 
-    --muted: 220 15% 14%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 220 15% 18%;
-    --accent-foreground: 210 30% 90%;
+    --accent: 220 15% 93%;
+    --accent-foreground: 220 15% 25%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 16%;
-    --ring: 217 91% 60%;
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 217 91% 55%;
 
     --radius: 1rem;
 
     /* Widget accent colors */
-    --linkedin: 210 100% 56%;
-    --linkedin-glow: 210 100% 56% / 0.15;
-    --company: 215 20% 50%;
-    --company-glow: 215 20% 50% / 0.1;
-    --buying: 142 71% 45%;
-    --buying-glow: 142 71% 45% / 0.15;
-    --opener: 270 70% 60%;
-    --opener-glow: 270 70% 60% / 0.15;
+    --linkedin: 210 100% 50%;
+    --linkedin-glow: 210 100% 50% / 0.2;
+    --company: 215 25% 45%;
+    --company-glow: 215 25% 45% / 0.12;
+    --buying: 142 71% 40%;
+    --buying-glow: 142 71% 40% / 0.2;
+    --opener: 270 70% 55%;
+    --opener-glow: 270 70% 55% / 0.2;
     --pain: 38 92% 50%;
-    --pain-glow: 38 92% 50% / 0.15;
-    --guide: 230 70% 60%;
-    --guide-glow: 230 70% 60% / 0.15;
+    --pain-glow: 38 92% 50% / 0.2;
+    --guide: 230 70% 55%;
+    --guide-glow: 230 70% 55% / 0.2;
     --heatmap: 0 85% 55%;
-    --heatmap-glow: 0 85% 55% / 0.12;
+    --heatmap-glow: 0 85% 55% / 0.15;
+    --input-accent: 217 91% 55%;
+    --input-glow: 217 91% 55% / 0.15;
 
     /* Glass effect */
-    --glass-bg: 225 20% 10% / 0.6;
-    --glass-border: 220 20% 30% / 0.3;
-    --glass-highlight: 0 0% 100% / 0.05;
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 220 20% 85% / 0.5;
+    --glass-highlight: 0 0% 100% / 0.6;
 
-    --sidebar-background: 225 25% 6%;
-    --sidebar-foreground: 210 40% 95%;
-    --sidebar-primary: 217 91% 60%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 217 91% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 15% 18%;
-    --sidebar-accent-foreground: 210 30% 90%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-accent: 220 15% 93%;
+    --sidebar-accent-foreground: 220 15% 25%;
+    --sidebar-border: 220 15% 88%;
+    --sidebar-ring: 217 91% 55%;
   }
 }
 
@@ -101,11 +103,12 @@
     pointer-events: none;
   }
 
-  .widget-glow-linkedin { box-shadow: 0 0 30px -5px hsl(var(--linkedin-glow)), inset 0 1px 0 hsl(0 0% 100% / 0.05); }
-  .widget-glow-company { box-shadow: 0 0 30px -5px hsl(var(--company-glow)), inset 0 1px 0 hsl(0 0% 100% / 0.05); }
-  .widget-glow-buying { box-shadow: 0 0 30px -5px hsl(var(--buying-glow)), inset 0 1px 0 hsl(0 0% 100% / 0.05); }
-  .widget-glow-opener { box-shadow: 0 0 30px -5px hsl(var(--opener-glow)), inset 0 1px 0 hsl(0 0% 100% / 0.05); }
-  .widget-glow-pain { box-shadow: 0 0 30px -5px hsl(var(--pain-glow)), inset 0 1px 0 hsl(0 0% 100% / 0.05); }
-  .widget-glow-guide { box-shadow: 0 0 30px -5px hsl(var(--guide-glow)), inset 0 1px 0 hsl(0 0% 100% / 0.05); }
-  .widget-glow-heatmap { box-shadow: 0 0 30px -5px hsl(var(--heatmap-glow)), inset 0 1px 0 hsl(0 0% 100% / 0.05); }
+  .widget-glow-linkedin { box-shadow: 0 4px 40px -8px hsl(var(--linkedin-glow)), 0 1px 3px hsl(220 20% 85% / 0.3); }
+  .widget-glow-company { box-shadow: 0 4px 40px -8px hsl(var(--company-glow)), 0 1px 3px hsl(220 20% 85% / 0.3); }
+  .widget-glow-buying { box-shadow: 0 4px 40px -8px hsl(var(--buying-glow)), 0 1px 3px hsl(220 20% 85% / 0.3); }
+  .widget-glow-opener { box-shadow: 0 4px 40px -8px hsl(var(--opener-glow)), 0 1px 3px hsl(220 20% 85% / 0.3); }
+  .widget-glow-pain { box-shadow: 0 4px 40px -8px hsl(var(--pain-glow)), 0 1px 3px hsl(220 20% 85% / 0.3); }
+  .widget-glow-guide { box-shadow: 0 4px 40px -8px hsl(var(--guide-glow)), 0 1px 3px hsl(220 20% 85% / 0.3); }
+  .widget-glow-heatmap { box-shadow: 0 4px 40px -8px hsl(var(--heatmap-glow)), 0 1px 3px hsl(220 20% 85% / 0.3); }
+  .widget-glow-input { box-shadow: 0 4px 40px -8px hsl(var(--input-glow)), 0 1px 3px hsl(220 20% 85% / 0.3); }
 }
