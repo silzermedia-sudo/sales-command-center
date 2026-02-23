@@ -14,7 +14,6 @@ export const TopBar = ({ onGenerate, isLoading }: TopBarProps) => {
     name: "",
     company: "",
     website: "",
-    linkedinUrl: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -39,7 +38,7 @@ export const TopBar = ({ onGenerate, isLoading }: TopBarProps) => {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <input
           placeholder="Prospect Name"
           value={form.name}
@@ -58,13 +57,7 @@ export const TopBar = ({ onGenerate, isLoading }: TopBarProps) => {
           onChange={e => setForm(p => ({ ...p, website: e.target.value }))}
           className="bg-secondary/80 border border-border rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
         />
-        <input
-          placeholder="LinkedIn URL"
-          value={form.linkedinUrl}
-          onChange={e => setForm(p => ({ ...p, linkedinUrl: e.target.value }))}
-          className="bg-secondary/80 border border-border rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-        />
-        <div className="sm:col-span-2 lg:col-span-4">
+        <div className="sm:col-span-2 lg:col-span-3">
           <motion.button
             type="submit"
             disabled={isLoading}

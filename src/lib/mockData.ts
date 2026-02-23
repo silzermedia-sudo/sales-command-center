@@ -2,16 +2,6 @@ export interface ProspectData {
   name: string;
   company: string;
   website: string;
-  linkedinUrl: string;
-}
-
-export interface LinkedInData {
-  name: string;
-  position: string;
-  tenure: string;
-  mutualConnections: number;
-  recentPosts: { text: string; date: string; likes: number }[];
-  activityLevel: "high" | "medium" | "low";
 }
 
 export interface CompanyData {
@@ -54,26 +44,7 @@ export interface LocationData {
   type: "hq" | "office";
 }
 
-export interface ActivitySlot {
-  hour: string;
-  day: string;
-  intensity: number; // 0 to 1
-}
-
 export function generateMockData(prospect: ProspectData) {
-  const linkedin: LinkedInData = {
-    name: prospect.name || "Sarah Mitchell",
-    position: "VP of Sales Operations",
-    tenure: "2 years, 4 months",
-    mutualConnections: 12,
-    recentPosts: [
-      { text: "Excited to announce our team grew 40% this quarter! 🚀", date: "2 days ago", likes: 142 },
-      { text: "The future of B2B sales is AI-augmented, not AI-replaced.", date: "1 week ago", likes: 89 },
-      { text: "Just wrapped up our Q4 planning session. Big things ahead!", date: "2 weeks ago", likes: 67 },
-    ],
-    activityLevel: "high",
-  };
-
   const company: CompanyData = {
     industry: "Enterprise SaaS",
     employees: "500–1,000",
@@ -128,18 +99,5 @@ export function generateMockData(prospect: ProspectData) {
     { name: "Berlin Office", lat: 52.5200, lng: 13.4050, type: "office" },
   ];
 
-  const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  const hours = ["8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
-  const activity: ActivitySlot[] = [];
-  days.forEach(day => {
-    hours.forEach(hour => {
-      let intensity = Math.random();
-      if (hour === "10AM" || hour === "11AM") intensity = 0.6 + Math.random() * 0.4;
-      if (hour === "2PM" || hour === "3PM") intensity = 0.5 + Math.random() * 0.4;
-      if (day === "Mon" || day === "Tue") intensity = Math.min(1, intensity + 0.15);
-      activity.push({ hour, day, intensity: Math.round(intensity * 100) / 100 });
-    });
-  });
-
-  return { linkedin, company, buyingSignals, openers, painPoints, guide, locations, activity };
+  return { company, buyingSignals, openers, painPoints, guide, locations };
 }
